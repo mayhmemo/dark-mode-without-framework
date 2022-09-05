@@ -6,6 +6,10 @@ A simple dark mode with Tailwind CSS that works only with HTML, CSS and JS
   <a href="https://darkmode.mayhm.repl.co">Demo</a>
 </p>
 
+## Usability
+I've seen a lot of tutorials teaching how to make Dark Mode using Tailwind with Frameworks or Node, but i wanted a simple functional Dark Mode for a single or few pages. So i made this project.
+**I DON'T recommend this if you want to make a scalable project.**
+
 ## How to use
 Download 'darkmode.js' file and call it in HTML head with Tailwind and Flowbite ones too, like the code below:
 ```html
@@ -60,7 +64,8 @@ Now it's perfectly working and you can use it in your project!
 
 ## To-do list
 - Script code that works without need of 'onload' and 'onclick' on HTML;
-- Cleaner code (maybe).
+- Cleaner code (maybe);
+- How it works guide.
 
 ## References
 - [Tailwind CSS](https://tailwindcss.com/)
