@@ -20,7 +20,7 @@ Download 'darkmode.js' file and call it in HTML head with Tailwind and Flowbite 
 </head>
 ```
 
-Now put this script below the previous code to make Tailwind identify dark mode as "class":
+Now put this script below the previous code to make Tailwind identify dark mode by "class":
 ```html
   <script>
       tailwind.config = {
