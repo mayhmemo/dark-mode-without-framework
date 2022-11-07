@@ -1,5 +1,5 @@
 # DMWF - Dark Mode Without Framework
-A simple dark mode with Tailwind CSS that works only with HTML, CSS and JS
+A simple dark mode using Tailwind CSS that works only with HTML, CSS and JS
 
 <p align="center">
   <img align="center" alt="Coding" width="100%" src="https://cdn.discordapp.com/attachments/718883307441487922/1016195925653327884/darkmode.gif">
