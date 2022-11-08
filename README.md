@@ -63,9 +63,9 @@ And for the final touch, let's put the ```onclick``` at the button:
 Now it's perfectly working and you can use it in your project!
 
 ## To-do list
-- Script code that works without need of 'onload' and 'onclick' on HTML;
-- Cleaner code (maybe);
-- How it works guide.
+- [ ] Script code that works without need of 'onload' and 'onclick' on HTML;
+- [ ] Cleaner code (maybe);
+- [ ] How it works guide.
 
 ## References
 - [Tailwind CSS](https://tailwindcss.com/)
