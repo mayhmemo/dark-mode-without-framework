@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", (event) => {
     const html = document.documentElement;
     
