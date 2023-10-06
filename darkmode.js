@@ -1,67 +1,51 @@
-function onloads() {
-    var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-    var darkmode = localStorage.getItem("Darkmode");
-    const html = document.getElementById("html");
 
-    localStorage.setItem("Vision", 1);
-    var vision = localStorage.getItem("Vision");
-    console.log("Vision onloads: " + vision);
-    console.log("Darkmode onloads: " + darkmode);
+document.addEventListener("DOMContentLoaded", (event) => {
+    const html = document.documentElement;
     
-    if (darkmode == "true") {
-        themeToggleDarkIcon.classList.add('hidden');
-        themeToggleLightIcon.classList.remove('hidden');
-        html.classList.add("dark");
-        localStorage.setItem("Darkmode", true);
-        vision = parseInt(vision);
-        vision = vision + 1;
-        localStorage.setItem("Vision", vision);
-    } else if (darkmode == "false" || darkmode == null) {
-        themeToggleLightIcon.classList.add('hidden');
-        themeToggleDarkIcon.classList.remove('hidden');
-        html.classList.remove("dark");
-        localStorage.setItem("Darkmode", false);
+    const themeToogle = document.querySelector('#themeToogle');
+    const toDarkIcon = document.querySelector('#toDarkIcon');
+    const toLightIcon = document.querySelector('#toLightIcon');
+
+    verifyTheme(toDarkIcon, toLightIcon, html);
+    
+    themeToogle.addEventListener('click', function () {
+        const theme = localStorage.getItem('theme')
+        changeTheme(theme, toDarkIcon, toLightIcon, html)
+    });
+});
+
+function changeTheme(theme, toDarkIcon, toLightIcon){
+    if (theme === 'light') {
+        toogleToDark(toDarkIcon, toLightIcon, html);
+    } else {
+        toogleToLight(toDarkIcon, toLightIcon, html);
     }
 }
 
-function variable() {
-    var vision = localStorage.getItem("Vision");
+function verifyTheme(toDarkIcon, toLightIcon, html){
+    const theme = localStorage.getItem('theme');
 
-    console.log("Vision variable: " + vision);
-    
-    if (vision == "1") {
-        localStorage.setItem("Darkmode", false);
+    if (theme === 'light') {
+        toogleToLight(toDarkIcon, toLightIcon, html);
+    } else if (theme === 'dark'){
+        toogleToDark(toDarkIcon, toLightIcon, html);
+    } else {
+        localStorage.setItem('theme', 'light');
     }
 }
 
-function darkbtn() {
-    var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+function toogleToDark(toDarkIcon, toLightIcon, html){
+    toDarkIcon.classList.add('hidden');
+    toLightIcon.classList.remove('hidden');
 
-    themeToggleLightIcon.classList.remove('hidden');
+    localStorage.setItem('theme', 'dark');
+    html.classList.add("dark");
 }
 
-function dark() {
-    var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-    var darkmode = localStorage.getItem("Darkmode");
-    const html = document.getElementById("html");
+function toogleToLight(toDarkIcon, toLightIcon, html){
+    toLightIcon.classList.add('hidden');
+    toDarkIcon.classList.remove('hidden');
 
-    var vision = localStorage.getItem("Vision");
-    vision = parseInt(vision);
-    vision = vision + 1;
-    localStorage.setItem("Vision", vision);
-    
-    if (darkmode == "true") {
-        themeToggleLightIcon.classList.add('hidden');
-        themeToggleDarkIcon.classList.remove('hidden');
-        html.classList.remove("dark");
-        localStorage.setItem("Darkmode", false);
-    } else if (darkmode == "false") {
-        themeToggleDarkIcon.classList.add('hidden');
-        themeToggleLightIcon.classList.remove('hidden');
-        html.classList.add("dark");
-        localStorage.setItem("Darkmode", true);
-    }
+    localStorage.setItem('theme', 'light');
+    html.classList.remove("dark");
 }
